@@ -1,0 +1,218 @@
+
+  {% extends 'core/base.html' %}
+
+    {% block title %}Deposits History{%endblock title  %}
+
+     
+ {% block  content %}
+
+{% include 'core/modalForm.html' %}
+
+<div class="wrapper" style="height: auto; min-height: 100%;">
+        <div class="content-wrapper" style="min-height: 526px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+         Deposits History        </h1>
+          
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Deposits History</li>
+        </ol>
+    </section>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="_container-fluid">
+                                
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-md-flex align-items-center">
+                                    <div>
+                                        <h4 class="card-title">Deposits History</h4>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <div class="dl">
+                                            <form class="m-t-20" action="" method="get">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" name="search" class="form-control" placeholder="Enter transaction id" aria-label="" aria-describedby="basic-addon1">
+                                                    
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive ">
+                                    <table class="table table-striped table-bordered no-margin">
+                                        <thead>
+                                            <tr class="bg-pale-dark">
+                                                <th class="border-top-0">Trans ID</th>
+                                                <th class="text-center border-top-0">Amount(USD)</th>
+                                                 <th class="text-center border-top-0">Payment mode</th>
+                                                <th class="text-center border-top-0">Status</th>
+                                                                                                <th class="text-center border-top-0">Date Created</th>
+
+                                                                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                                {% for deposit in deposits %}
+
+
+
+                                                                <tr>
+                                                                    <td class="font-bold text-center">{{ deposit.fund_id }}</td>
+
+                                                <td class="font-bold text-center">${{ deposit.amount_to_fund }} USD</td>
+                                                <td class="font-bold text-center">{{ deposit.type }}</td>
+                                                <td class="text-center">
+
+                                                    {% if deposit.deposit_status == 'pending'%}
+                                                                                                        <span class="btn-sm btn-warning btn-rounded">{{deposit.deposit_status }}</span>
+
+                                                        {% elif deposit.deposit_status == 'approved'%}
+                                                                                                            <span class="btn-sm btn-success btn-rounded">{{deposit.deposit_status }}</span>
+{% else %}
+                                                                                                            <span class="btn-sm btn-danger btn-rounded">{{deposit.deposit_status }}</span>
+
+                                                    {% endif %}
+
+                                                </td>
+                                                                                                <td class="text-center">{{ deposit.date_created }}</td>
+
+                                                
+
+                                            </tr>
+    {% endfor %}
+                                                                                    </tbody>
+                                    </table>
+                                </div>
+                                                             </div>
+                        </div>
+                    </div>
+
+                     
+
+                </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+            
+            
+
+  <!-- Main Footer -->
+
+</div>
+<!-- ./wrapper -->
+
+
+<!-- REQUIRED SCRIPTS -->
+ {% endblock %}
+{% block extra_script %}
+<script>
+  $(function () {
+    //Add text editor
+    $('#summernote').summernote({
+        placeholder: 'Type your message here',
+        tabsize: 2,
+        height: 250,
+        callbacks: {
+            onImageUpload: function(image) {
+                uploadImage(image[0]);
+            }
+        }
+    });
+
+    //upload
+    function uploadImage(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                    xhr: function() {
+                        var myXhr = $.ajaxSettings.xhr();
+                        if (myXhr.upload) myXhr.upload.addEventListener('progress',progressHandlingFunction, false);
+                        return myXhr;
+                    },
+                url: 'https://coindeskoption.com/account/post/imgupload',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src', '' + url).attr('class', 'img-fluid mx-auto d-block');
+
+
+                    $('#summernote').summernote("insertNode", image[0]);
+
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+
+
+        // update progress bar
+
+        function progressHandlingFunction(e){
+            if(e.lengthComputable){
+                $('progress').attr({value:e.loaded, max:e.total});
+                // reset progress on complete
+                if (e.loaded == e.total) {
+                    $('progress').attr('value','0.0');
+                }
+            }
+        }
+  })
+
+</script>
+<script type="text/javascript">
+$(function () {
+  $("button[type='submit']").click(function(){
+    var pValue = $("#calculate_amount").val();
+    var profit_d = '';
+    var profit_i = '';
+
+    var paylnk = $( "#payproc" ).remove();
+    var error = '';
+    if(pValue ==null){
+
+     $("#calModal").modal('show');
+     $("#h_calculate").html(' PROFIT CALCULATION ERROR');
+     $("#p_calculate").html('Your investment amount is empty');
+
+     error = '1';
+   }
+   if(pValue != null && error ==''){
+    $.ajax({
+        url: 'https://coindeskoption.com/account/update/check_profit?p=&a=' + pValue,
+        beforeSend: function(xhr) {
+             xhr.setRequestHeader("Authorization", "Bearer 6QXNMEMFHNY4FJ5ELNFMP5KRW52WFXN5")
+        }, success: function(data){
+            //process the JSON data etc
+            var profit = data;
+            $("#calModal").modal('show');
+            $("#h_calculate").html('INVESTMENT AMOUNT: '  + pValue + 'USD');
+            $("#p_calculate").html('<h3 class="text-center text-success">PROFIT:  ' + profit + '</h3>');
+            //var returns
+            $("#p_calculate2").html('<h3 class="text-center text-success">TOTAL RETURNS: '+ pValue +'( +' + profit + ')</h3>');
+        }
+       });
+
+
+  }
+
+  });
+});
+</script>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,184 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+ {% block title %}
+    Withdraw
+    {% endblock %}
+  {% block content %}
+
+{% include 'core/modalForm.html' %}
+
+
+<div class="wrapper" style="height: auto; min-height: 100%;">
+
+
+        <div class="content-wrapper" style="min-height: 526px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+         Withdraw        </h1>
+          
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Withdraw</li>
+        </ol>
+    </section>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="_container-fluid">
+                            <div class="row">
+                <div class="col-sm-12 col-lg-5 ">
+                    <p>please go to settings to verify your accounts and set your withdrawal information</p>
+                                        <p>                    <span class=""> bank details {{ bank.bank_details }}</span>
+</p>
+
+                    <p>                      <span class="">bitcoin wallet {{ bank.bitcoin_wallet_address }}</span>
+</p>
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Request New Withdrawal</h3>
+                        </div>
+                        <div class="box-body">
+                            <form action="" class="form-horizontal form-material" method="post" accept-charset="utf-8">
+                      {% csrf_token %}
+                             <div class="form-group">
+                               <label class="text-bold">Amount</label>
+                                 {{ form|crispy }}
+                             </div>
+
+                            <div class="form-group">
+                                <button type="submit" name="new-withdraw" class="btn btn-dark btn-block">Submit</button>
+                            </div>
+                           </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-7 ">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Fees and Processing</h3>
+                                
+                        </div>
+                        <div class="box-body table-responsive">
+                        <table class="table no-margin">
+                            <tbody><tr>
+                                <th style="width: 20%;" class="text-bold">Mode</th>
+                                <th>Minimun</th>
+                                <th>Fee</th>
+                                <th>Processing time</th>
+                            </tr>
+                             
+                                
+                                    <tr>
+                                        <td class="text-bold" style="width: 20%;">Bitcoin</td>
+                                        <td>$50 </td>
+                                        <td>$2 + 0%</td>
+                                        <td>4 hours </td>
+                                    </tr>
+                               
+                             
+                                
+
+                               
+                                                    </tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-md-flex align-items-center">
+                                    <div>
+                                        <h4 class="card-title">Withdraw</h4>
+                                        
+                                    </div>
+                                    <div class="ml-auto">
+                                        <div class="dl">
+                                                                                    </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive ">
+                                    <table class="table table-striped table-bordered no-margin">
+
+                                        <thead>
+                                            <tr class="bg-pale-dark">
+                                                <th class="border-top-0">ID</th>
+                                                <th class="text-center border-top-0">Amount</th>
+                                                <th class="text-center border-top-0">Mode</th>
+                                                <th class="text-center border-top-0">Status</th>
+                                                <th class="text-center border-top-0">Date Created</th>
+
+                                                                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                        {% for with in withdraw %}
+
+                                        <tr>
+                                                                                            <td class="font-bold text-center">
+                                                    {{forloop.counter}}                                              </td>
+
+                                                                                            <td class="font-bold text-center">
+                                                    {{with.amount_to_withdraw}}                                              </td>
+
+                                                                                            <td class="font-bold text-center">
+                                                    {{with.method}}                                              </td>
+
+
+
+
+
+                                            <td class="text-yellow hover-warning">
+
+                                                {% if with.withdrawal_status == 'pending'%}
+
+                                                    <span class="btn-sm btn-warning btn-rounded">    {{with.withdrawal_status}}  </span>
+
+                                                        {% elif with.withdrawal_status == 'approved'%}
+                                                    <span class="btn-sm btn-success btn-rounded">    {{with.withdrawal_status}}  </span>
+{% else %}
+                                                    <span class="btn-sm btn-danger btn-rounded">     {{with.withdrawal_status}}  </span>
+
+                                                    {% endif %}
+
+                                            </td>
+
+
+
+                                            <td class="font-bold text-center">
+                                                    {{with.date_created}}
+                                            </td>
+                                        </tr>
+                                          {% endfor %}
+                                                                                    </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+
+                 </div>    
+
+                </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+        
+
+
+</div>
+<!-- ./wrapper -->
+
+
+  {% endblock %}
+
+

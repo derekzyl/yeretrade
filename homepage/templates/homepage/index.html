@@ -1,0 +1,954 @@
+{% extends 'homepage/base.html'%}
+{% load crispy_forms_tags %}
+{% block title %}
+    {% load static %}
+    welcome to yeretrade
+
+{% endblock %}
+{% block crumbs %}
+home
+{% endblock %}
+
+{% block content %}
+
+
+<!-- not actually inner hero but a alanding page-->
+    <!-- inner hero start -->
+    <section class="bg_img" style="min-height: 500px; width: 100%; height:800px; z-index:4;" data-background="{% static 'homepage/assets/images/bg/getta.jpg' %}">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 class="page-title"></h2>
+            <ul class="page-breadcrumb">
+
+              <li>
+
+<div  id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+              </li>
+            </ul>
+          </div>
+
+
+
+
+
+               <div class="col-lg-4">
+      <div id="earth"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- inner hero end -->
+<!-- not actually inner hero but a alanding page-->
+
+
+
+
+
+
+ <!-- cureency section start -->
+    <div class="cureency-section">
+      <div class="container">
+        <div class="row mb-none-30">
+              <div class="col-lg-12">
+
+
+
+                  <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "Nasdaq 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "BTC/USD"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "ETH/USD"
+    }
+  ],
+  "showSymbolLogo": false,
+  "colorTheme": "dark",
+  "isTransparent": true,
+  "displayMode": "adaptive",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+
+
+{#            <div style="width: 100%; height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #FFFFFF; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #FFFFFF;padding:1px;padding: 0px; margin: 0px;"><div style="height:40px;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&amp;theme=light&amp;pref_coin_id=1505&amp;invert_hover=no" width="100%" height="36" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="display: none; color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing:content-box; margin: 5px 6px 10px 0px; font-family: Verdana, Tahoma, Arial, sans-serif;"></div></div>#}
+        </div>
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"></a> </div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "width": "100%",
+  "height": "490",
+  "defaultColumn": "performance",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "light",
+  "locale": "en",
+  "isTransparent": true
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+          <div class="col-lg-3 col-sm-6 cureency-item mb-30">
+            <div class="cureency-card text-center">
+              <h6 class="cureency-card__title text-white">24 VOLUME</h6>
+              <span class="cureency-card__amount h-font-family font-weight-600 base--color">2,547.35 BTC</span>
+            </div><!-- cureency-card end -->
+          </div><!-- cureency-item end -->
+          <div class="col-lg-3 col-sm-6 cureency-item mb-30">
+            <div class="cureency-card text-center">
+              <h6 class="cureency-card__title text-white">ACTIVE TRADES</h6>
+              <span class="cureency-card__amount h-font-family font-weight-600 base--color">2,545,875</span>
+            </div><!-- cureency-card end -->
+          </div><!-- cureency-item end -->
+        </div>
+      </div>
+    </div>
+    <!-- cureency section end  -->
+
+
+
+<!-- Crypto Converter ⚡ Widget --><crypto-converter-widget shadow symbol live background-color="#000000" border-radius="1.05rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" decimal-places="2">
+    <a href="https://cr.today/" target="_blank" rel="noopener"></a>
+</crypto-converter-widget>
+    <script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget/dist/latest.min.js"></script>
+
+
+
+    <!-- about section start -->
+    <section class="about-section pt-120 pb-120 bg_img" data-background=" {% static 'homepage/assets/images/bg/gat.jpg' %}">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-6">
+            <div class="about-content">
+              <h2 class="section-title mb-3"><span class="font-weight-normal">About</span> <b class="base--color">Us</b></h2>
+              <p>We are an international financial company engaged in investment activities, which are related to trading on financial markets and cryptocurrency exchanges performed by qualified professional traders.</p>
+              <p class="mt-4">Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and the trustees. We work towards increasing your profit margin by profitable investment. We look forward to you being part of our community.</p>
+              <a href="{% url 'about' %}" class="cmn-btn mt-4">MORE INFO</a>
+            </div><!-- about-content end -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about section end -->
+
+
+
+{#        <!-- license section start -->#}
+{#    <section class="about-section pt-120 pb-120 bg_img" data-background="{% static 'homepage/assets/images/bg/gat1.jpg' %}">#}
+{#      <div class="container">#}
+{#        <div class="row">#}
+{#          <div class="col-lg-6 ">#}
+{#            <div class="about-content">#}
+{#              <h2 class="section-title mb-3"><span class="font-weight-normal">LICENCES and</span> <b class="base--color">CERTIFICATES</b></h2>#}
+{#                <i class="fa fa-certificate fa-10x" aria-hidden="true"></i>#}
+{#         <a href="{% url 'certificate' %}" class="cmn-btn mt-4">MORE INFO</a>#}
+{#            </div><!-- about-content end -->#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#    </section>#}
+{#    <!-- license section end -->#}
+
+
+
+    <!-- package section start -->
+    <section class="pt-120 pb-120">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Investment</span> <b class="base--color">Plans</b></h2>
+              <p>To make a solid investment, you have to know where you are investing. Find a plan which is best for you.</p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center mb-none-30">
+
+            {% for pa in plan %}
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+            <div class="package-card text-center bg_img" data-background="assets/images/bg/bg-4.png">
+              <h4 class="package-card__title base--color mb-2">{{ pa.plan_name }}</h4>
+              <ul class="package-card__features mt-4">
+                <li>Return {{ pa.plan_daily_percentage }}%</li>
+                <li>Every day</li>
+                <li>For {{ pa.days_duration }} days</li>
+                  <p><span class="text-bold">Minimum Deposit: {{ pa.minimum_deposit }} USD</span></p>
+                    <p><span class="text-bold">Miximum Deposit: {{ pa.maximum_deposit }} USD </span></p>
+                      <p><span class="text-success text-bold">Expected Returns: ${{ pa.get_expected_minimum }} USD - ${{ pa.get_expected_maximum }} USD</span></p>
+
+              </ul>
+
+              <a href="{% url 'core:purchase-plan' %}" class="cmn-btn btn-md mt-4">Invest Now</a>
+            </div><!-- package-card end -->
+          </div>
+            {% endfor %}
+
+        </div>
+          <!-- row end -->
+
+
+
+        <div class="row mt-50">
+          <div class="col-lg-12 text-center">
+            <a href="{% url 'plan' %}" class="cmn-btn">View All Packages</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- package section end  -->
+
+<!-- calculator starts -->
+
+        <section class="pb-120 mt-4 ">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="subscribe-wrapper bg_img" data-background="{% static 'homepage/assets/images/bg/gat1.jpg' %}">
+              <div class="col-md-12 col-sm-12  align-items-center">
+                <div class="col-lg-5">
+                <h5 class="page-header text-center text-dark no-border base--color">calculate expected returns</h5>
+                </div>
+                <div class=" p-4  ">
+                 <div class="modal-header p-4 " >
+
+                <input type="number" name="amount"  value="0" placeholder="input value" id="inputed" class="form-control rounded">
+
+                <select id="rated" >
+                                                     {% for pa in plan %}
+                    <option value = '{{ pa.plan_daily_percentage }}'>{{ pa.plan_name }}</option>
+                    {% endfor %}
+                </select>
+
+                 </div>  <div class=" bg-yellow m-2">
+                    <b> <span class="base--color">Interest</span></br>
+
+                    USD<span id="interestss"></span>
+   </b>
+                    <b><span class="base--color"> </br> expected returns</span></br>
+
+                    USD<span id="totals"></span>
+   </b>
+                </div>
+
+            </div>
+                '</div>'
+              </div>
+            </div><!-- subscribe-wrapper end -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- calculator ends -->
+
+
+    <!-- choose us section start -->
+    <section class="pt-120 pb-120 overlay--radial bg_img" data-background="{% static 'homepage/assets/images/bg/bg77.jpg' %}">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Why Choose</span> <b class="base--color">YereTrade</b></h2>
+              <p>Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service.</p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center mb-none-30">
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="lar la-copy"></i>
+                </div>
+                <h4 class="choose-card__title base--color">Legal Company</h4>
+              </div>
+              <p>Our company conducts absolutely legal activities in the legal field. We are certified to operate investment business, we are legal and safe.</p>
+            </div><!-- choose-card end -->
+          </div>
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="las la-lock"></i>
+                </div>
+                <h4 class="choose-card__title base--color">High reliability</h4>
+              </div>
+              <p>We are trusted by a huge number of people. We are working hard constantly to improve the level of our security system and minimize possible risks.</p>
+            </div><!-- choose-card end -->
+          </div>
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="las la-user-lock"></i>
+                </div>
+                <h4 class="choose-card__title base--color">Anonymity</h4>
+              </div>
+              <p>Anonymity and using cryptocurrency as a payment instrument. In the era of electronic money – this is one of the most convenient ways of cooperation.</p>
+            </div><!-- choose-card end -->
+          </div>
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="las la-shipping-fast"></i>
+                </div>
+                <h4 class="choose-card__title base--color">Quick Withdrawal</h4>
+              </div>
+              <p>Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $10.</p>
+            </div><!-- choose-card end -->
+          </div>
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="las la-users"></i>
+                </div>
+                <h4 class="choose-card__title base--color">Referral Program</h4>
+              </div>
+              <p>We are offering a certain level of referral income through our referral program. you can increase your income by simply refer a few people.</p>
+            </div><!-- choose-card end -->
+          </div>
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="las la-headset"></i>
+                </div>
+                <h4 class="choose-card__title base--color">24/7 Support</h4>
+              </div>
+              <p>We provide 24/7 customer support through e-mail and telegram. Our support representatives are periodically available to elucidate any difficulty..</p>
+            </div><!-- choose-card end -->
+          </div>
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="las la-server"></i>
+                </div>
+                <h4 class="choose-card__title base--color">Dedicated Server</h4>
+              </div>
+              <p>We are using a dedicated server for the website which allows us exclusive use of the resources of the entire server.</p>
+            </div><!-- choose-card end -->
+          </div>
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="fab fa-expeditedssl"></i>
+                </div>
+                <h4 class="choose-card__title base--color">SSL Secured</h4>
+              </div>
+              <p>Comodo Essential-SSL Security encryption confirms that the presented content is genuine and legitimate.</p>
+            </div><!-- choose-card end -->
+          </div>
+          <div class="col-xl-4 col-md-6 mb-30">
+            <div class="choose-card border-radius--5">
+              <div class="choose-card__header mb-3">
+                <div class="choose-card__icon">
+                  <i class="las la-shield-alt"></i>
+                </div>
+                <h4 class="choose-card__title base--color">DDOS Protection</h4>
+              </div>
+              <p>We are using one of the most experienced, professional, and trusted DDoS Protection and mitigation provider.</p>
+            </div><!-- choose-card end -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- choose us section end  -->
+
+
+
+{#    <!-- how work section start -->#}
+{#    <section class="pt-120 pb-120 bg_img" data-background="{% static 'homepage/assets/images/bg/bg77.jpg' %}">#}
+{#      <div class="container">#}
+{#        <div class="row justify-content-center">#}
+{#          <div class="col-lg-6 text-center">#}
+{#            <div class="section-header">#}
+{#              <h2 class="section-title">#}
+{##}
+{#                  <span class="font-weight-normal">How</span>#}
+{#                  <b class="base--color">YereTrade</b>#}
+{#                  <span class="font-weight-normal">Works</span></h2>#}
+{#              <p>Get involved in our tremendous platform and Invest. We will utilize your money and give you profit in your wallet automatically.</p>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div><!-- row end -->#}
+{#        <div class="row justify-content-center mb-none-30">#}
+{#          <div class="col-lg-4 col-md-6 work-item mb-30">#}
+{#            <div class="work-card text-center">#}
+{#              <div class="work-card__icon">#}
+{#                <i class="las la-user base--color"></i>#}
+{#                <span class="step-number">01</span>#}
+{#              </div>#}
+{#              <div class="work-card__content">#}
+{#                <h4 class="base--color mb-3">Create Account</h4>#}
+{#              </div>#}
+{#            </div><!-- work-card end -->#}
+{#          </div>#}
+{#          <div class="col-lg-4 col-md-6 work-item mb-30">#}
+{#            <div class="work-card text-center">#}
+{#              <div class="work-card__icon">#}
+{#                <i class="las la-hand-holding-usd base--color"></i>#}
+{#                <span class="step-number">02</span>#}
+{#              </div>#}
+{#              <div class="work-card__content">#}
+{#                <h4 class="base--color mb-3">Invest To Plan</h4>#}
+{#              </div>#}
+{#            </div><!-- work-card end -->#}
+{#          </div>#}
+{#          <div class="col-lg-4 col-md-6 work-item mb-30">#}
+{#            <div class="work-card text-center">#}
+{#              <div class="work-card__icon">#}
+{#                <i class="las la-wallet base--color"></i>#}
+{#                <span class="step-number">03</span>#}
+{#              </div>#}
+{#              <div class="work-card__content">#}
+{#                <h4 class="base--color mb-3">Get Profit</h4>#}
+{#              </div>#}
+{#            </div><!-- work-card end -->#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#    </section>#}
+{#    <!-- how work section end  -->#}
+
+
+    <!-- faq section start -->
+    <section class="pt-120 pb-120">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Frequently Asked</span> <b class="base--color">Questions</b></h2>
+              <p>We answer some of your Frequently Asked Questions regarding our platform. If you have a query that is not answered here, Please contact us.</p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion cmn-accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <i class="las la-question-circle"></i>
+                      <span>When can I deposit/withdraw from my Investment account?</span>
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Deposit and withdrawal are available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform. Deposit and withdrawal are available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <i class="las la-question-circle"></i>
+                      <span>How do I check my account balance?</span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    You can see this anytime on your accounts dashboard. You can see this anytime on your accounts dashboard.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <i class="las la-question-circle"></i>
+                      <span>I forgot my password, what should I do?</span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Visit the password reset page, type in your email address and click the `Reset` button. Visit the password reset page, type in your email address and click the `Reset` button.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <i class="las la-question-circle"></i>
+                      <span>How will I know that the withdrawal has been successful?</span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    You will get an automatic notification once we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you. You will get an automatic notification once we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      <i class="las la-question-circle"></i>
+                      <span>How much can I withdraw?</span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions. You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- faq section end -->
+
+
+    <!-- testimonial section start -->
+    <section class="pt-120 pb-120 bg_img overlay--radial" data-background="{% static 'homepage/assets/images/bg/bg-7.jpg' %}">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">What Users Say</span> <b class="base--color">About Us</b></h2>
+              <p>thanks for creating the avenue of investments</p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="testimonial-slider">
+
+                {% for com in comment %}
+              <div class="single-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-card__content">
+                    <p>{{ com.comment }}</p>
+                  </div>
+                  <div class="testimonial-card__client">
+                    <div class="thumb">
+                      <img src="{{ com.image.url }}">
+                    </div>
+                    <div class="content">
+                      <h6 class="name">{{ com.name  }}</h6>
+                      <span class="designation">{{ com.occupation }}</span>
+                      <div class="ratings">
+                        <i class="las la-star"></i>
+                        <i class="las la-star"></i>
+                        <i class="las la-star"></i>
+                        <i class="las la-star"></i>
+                        <i class="las la-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- testimonial-card end -->
+              </div><!-- single-slide end -->
+
+                {% endfor %}
+
+            </div>
+          </div>
+        </div><!-- row end -->
+      </div>
+    </section>
+    <!-- testimonial section end -->
+
+    <!-- team section start -->
+    <section class="pt-120 pb-120 bg_img" data-background="{% static 'homepage/assets/images/bg/bg-5.jpg' %}">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Our Expert</span> <b class="base--color">Team Members</b></h2>
+              <p>yeretrade has been a revolutionary company </p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center mb-none-30">
+   
+
+            {% for team in team_members %}
+          <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+            <div class="team-card">
+              <div class="team-card__thumb">
+                <img src="{{ team.image.url }}" alt="image">
+              </div>
+              <div class="team-card__content">
+                <h4 class="name mb-1">{{ team.name }}</h4>
+                <span class="designation">{{ team.position }}</span>
+              </div>
+            </div><!-- team-card end -->
+          </div>
+            {% endfor %}
+
+        </div>
+      </div>
+    </section>
+    <!-- team section end -->
+
+
+    <!-- data section start -->
+    <section class="pt-120 pb-120">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Our Latest</span> <b class="base--color">Transaction</b></h2>
+              <p>Here is the log of the most recent transactions including withdraw and deposit made by our users.</p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <ul class="nav nav-tabs custom--style-two justify-content-center" id="transactionTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Latest Deposit</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="withdraw-tab" data-toggle="tab" href="#withdraw" role="tab" aria-controls="withdraw" aria-selected="false">Latest Withdraw</a>
+              </li>
+            </ul>
+
+            <div class="tab-content mt-4" id="transactionTabContent">
+              <div class="tab-pane fade show active" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
+                <div class="table-responsive--sm">
+                  <table class="table style--two">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Gateway</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+{% for trans in transaction|slice:':5'%}
+        <tr>
+                        <td data-label="Name">
+                          <div class="user">
+                            <div class="thumb"><img src={{ trans.image.url }} alt="image"></div>
+                            <span>{{ trans.name }}</span>
+                          </div>
+                        </td>
+                        <td data-label="Date">{{ trans.date }}</td>
+                        <td data-label="Amount">$ {{ trans.amount }}</td>
+                        <td data-label="Gateway">bitcoin</td>
+                      </tr>
+{% endfor %}
+
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="withdraw" role="tabpanel" aria-labelledby="withdraw-tab">
+                <div class="table-responsive--md">
+                  <table class="table style--two">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Gateway</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for trans in withdrawal|slice:':5' %}
+                                              <tr>
+                        <td data-label="Name">
+                          <div class="user">
+                            <div class="thumb"><img src="{{ trans.image.url }}" alt="image"></div>
+                            <span>{{ trans.name }}</span>
+                          </div>
+                        </td>
+                        <td data-label="Date">{{ trans.date }}</td>
+                        <td data-label="Amount">$ {{ trans.amount }}</td>
+                        <td data-label="Gateway">bitcoin</td>
+                      </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!-- tab-content end -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- data section end -->
+
+
+    <!-- top investor section start -->
+    <section class="pt-120 pb-120 border-top-1">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-8 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Our Top</span> <b class="base--color">Investor</b></h2>
+              <p> </p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center mb-none-30">
+
+
+            {%  for top in top_investor %}
+          <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+            <div class="investor-card border-radius--5">
+              <div class="investor-card__thumb bg_img background-position-y-top" data-background="{{ top.image.url }}"></div>
+              <div class="investor-card__content">
+                <h6 class="name">{{ top.name }}</h6>
+                <span class="amount f-size-14">Investment - ${{ top.invested_amount }}</span>
+              </div>
+            </div><!-- investor-card end -->
+          </div>
+
+            {% endfor %}
+
+
+
+        </div>
+      </div>
+    </section>
+    <!-- top investor section end -->
+
+
+    <!-- cta section start -->
+    <section class="pb-120">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-8">
+            <div class="cta-wrapper bg_img border-radius--10 text-center" data-background="assets/images/bg/bg-8.jpg">
+              <h2 class="title mb-3">Get Started Today With Us</h2>
+              <p>This is a Revolutionary Money Making Platform! Invest for Future in Stable Platform and Make Fast Money. Not only we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security of your investment.</p>
+              <a href="{% url 'account_signup' %}" class="cmn-btn mt-4">Join Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- cta section end -->
+
+    <!-- payment brand section start -->
+    <section class="pb-120">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Payment We</span> <b class="base--color">Accept</b></h2>
+              <p>We accept all major cryptocurrencies and fiat payment methods to make your investment process easier with our platform.</p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="payment-slider">
+              <div class="single-slide">
+                <div class="brand-item">
+                  <img src="../../static/homepage/assets/images/brand/1.png" alt="image">
+                </div><!-- brand-item end -->
+              </div>
+              <div class="single-slide">
+                <div class="brand-item">
+                  <img src="../../static/homepage/assets/images/brand/2.png" alt="image">
+                </div><!-- brand-item end -->
+              </div>
+              <div class="single-slide">
+                <div class="brand-item">
+                  <img src="../../static/homepage/assets/images/brand/3.png" alt="image">
+                </div><!-- brand-item end -->
+              </div>
+              <div class="single-slide">
+                <div class="brand-item">
+                  <img src="../../static/homepage/assets/images/brand/4.png" alt="image">
+                </div><!-- brand-item end -->
+              </div>
+              <div class="single-slide">
+                <div class="brand-item">
+                  <img src="../../static/homepage/assets/images/brand/5.png" alt="image">
+                </div><!-- brand-item end -->
+              </div>
+              <div class="single-slide">
+                <div class="brand-item">
+                  <img src="../../static/homepage/assets/images/brand/6.png" alt="image">
+                </div><!-- brand-item end -->
+              </div>
+              <div class="single-slide">
+                <div class="brand-item">
+                  <img src="../../static/homepage/assets/images/brand/7.png" alt="image">
+                </div><!-- brand-item end -->
+              </div>
+              <div class="single-slide">
+                <div class="brand-item">
+                  <img src="../../static/homepage/assets/images/brand/8.png" alt="image">
+                </div><!-- brand-item end -->
+              </div>
+            </div><!-- payment-slider end -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- payment brand section end -->
+
+
+    <!-- blog section start -->
+    <section class="pt-120 pb-120 border-top-1">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Our Latest</span> <b class="base--color">News</b></h2>
+              <p>get more and latest information on our latest investments and latest strategies</p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center mb-none-30">
+            {% for b in blog|slice:':3' %}
+                          <div class="col-lg-4 col-md-6 mb-30">
+            <div class="blog-card">
+              <div class="blog-card__thumb">
+                <img src="{{ b.image.url }}"  alt="" class="img-fluid">
+              </div>
+              <div class="blog-card__content">
+                <h4 class="blog-card__title mb-3"><a href="#0">{{ b.title }}</a></h4>
+                <ul class="blog-card__meta d-flex flex-wrap mb-4">
+                  <li>
+                    <i class="las la-user"></i>
+                    <a href="#0">{{ b.authur }}</a>
+                  </li>
+                  <li>
+                    <i class="las la-calendar"></i>
+                    <a href="#0">{{ b.date }}</a>
+                  </li>
+                </ul>
+                <p>{{ b.short_content}}</p>
+                <a href="{% url 'blog' %}" class="cmn-btn btn-md mt-4">Read More</a>
+              </div>
+            </div>
+          </div>
+
+            {% endfor %}
+
+        </div>
+      </div>
+    </section>
+    <!-- blog section end -->
+
+    <!-- subscribe section start -->
+    <section class="pb-120">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="subscribe-wrapper bg_img" data-background="{% static 'homepage/assets/images/bg/bg-5.jpg' %}">
+              <div class="row align-items-center">
+                <div class="col-lg-5">
+                  <h2 class="title">Subscribe Our Newsletter</h2>
+                </div>
+                <div class="col-lg-7 mt-lg-0 mt-4">
+                  <form class="subscribe-form">
+                   {{ new }}
+                    <button class="subscribe-btn"><i class="las la-envelope"></i></button>
+                  </form>
+                '</div>'
+              </div>
+            </div><!-- subscribe-wrapper end -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- subscribe section end -->
+
+
+
+
+
+    <script>
+
+        let amounte = $('#inputed');
+       let rated = $('#rated');
+        let totalse = $('#totals');
+       let interestsse = $('#interestss');
+       let inputs = $('input')
+        let select = $('select')
+
+
+function update (){
+ let amount = parseFloat(amounte.val());
+    let rate =parseFloat(rated.val());
+
+    console.log(rate)
+
+    var interest = amount * rate/ 100;
+   var  total = interest + amount;
+
+   interestsse.html(interest.toFixed(2).replace(/(\d)(?=(\d{3})+\b)/g, '$1,')) ;
+     totalse.html(total.toFixed(2).replace(/(\d)(?=(\d{3})+\b)/g, '$1,')) ;
+
+}
+function updnum(){
+    update();
+    inputs.on('change keyup', update)
+    select.on('change keyup',update)
+
+}
+updnum();
+
+</script>
+
+
+{% endblock %}

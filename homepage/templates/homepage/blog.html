@@ -1,0 +1,63 @@
+
+{% extends 'homepage/base.html'%}
+
+{% block title %}
+blog
+{% endblock %}
+{% block crumbs %}
+blog
+{% endblock %}
+{% block content %}
+    <!-- blog section start -->
+    <section class="pt-120 pb-120 border-top-1">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <div class="section-header">
+              <h2 class="section-title"><span class="font-weight-normal">Our Latest</span> <b class="base--color">News</b></h2>
+              <p>welcome to our blog post</p>
+            </div>
+          </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center mb-none-30">
+            {% for b in blog %}
+
+                          <div class="col-lg-4 col-md-6 mb-30">
+            <div class="blog-card">
+              <div class="blog-card__thumb">
+                <img src="{{ b.image.url }}" alt="image">
+              </div>
+              <div class="blog-card__content">
+                <h4 class="blog-card__title mb-3"><a href="#0">{{ b.title }}</a></h4>
+                <ul class="blog-card__meta d-flex flex-wrap mb-4">
+                  <li>
+                    <i class="las la-user"></i>
+                    <a href="#0">{{ b.authur }}</a>
+                  </li>
+                  <li>
+                    <i class="las la-calendar"></i>
+                    <a href="#0">{{ b.date }}</a>
+                  </li>
+                </ul>
+                <p>{{ b.short_content }}</p>
+                <a href="{{ b.get_absolute_url }}" class="cmn-btn btn-md mt-4">read more</a>
+              </div>
+            </div>
+          </div>
+
+
+            {% endfor %}
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- blog section end -->
+
+{% endblock %}

@@ -1,0 +1,205 @@
+
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+   {% block title %}
+    Make deposit
+   {% endblock %}
+
+input {
+  width: 400px;
+}
+
+
+{% block content %}
+{% include 'core/modalForm.html' %}
+
+
+
+<div class="wrapper" style="height: auto; min-height: 100%;">
+
+
+
+
+    <div class="content-wrapper" style="min-height: 693px;">
+        <!-- Main content -->
+        <div class="content">
+            <div class="_container-fluid">
+
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-12">
+
+                        <div style="margin: auto; float: none; max-width: 600px;" class="card">
+                            <div class="card-body">
+
+                                                   {% for pay in paymentProof %}
+
+                                                    <img src="{{pay.upload_proof.url}}" alt="lo">
+
+                                            {% endfor %}
+                                                                <h6 class="text-bold">Available Credit: $ {{ main.main_balance }} USD</h6>
+                            </div>
+
+
+                            <hr class="bg-warning">
+
+
+                            <div class="card-body">
+
+
+                        <p>You are to make payment of $
+                            <span class="font-bold">
+                            {% for acc in account %}
+                                {% if forloop.last %}
+                                    {{ acc.amount_to_fund }} USD</span>
+                                    using {{ acc.type }}<br>
+                                </p>
+                                    <p>
+                                        <i class="fab fa-btc text-warning"></i>
+                                {{ acc.type }} Address:
+                                    <div>
+                                    <p type="text" id="copyTarget"  >
+                                    <b>
+                                   {% if acc.type == 'bitcoin' %}
+                                       bc1qmkly32lgxn3u24szesf8dn88zcyncpxtdnm7ej
+
+                                       {% elif acc.type == 'etherium' %}
+                                       oxf48874F0d4B9C92ff58085FBee5C10E736B0edFd
+
+                                       {% else %}
+                                       bnb1dg9yhtd6s8al9gzlravzkgmn02p7e9e85z0lpw
+
+                                {% endif  %}
+                            </b>
+                                </p>
+                                    <button class="btn-sm btn-success" id="copyButton">
+                                        Copy {{ acc.type }} address
+                                    </button>
+                                    </div>
+                                  </span></span>
+                                </p>
+                                <div class="alert alert-warning text-bold">
+                                    <strong>INSTRUCTIONS:</strong> Transfer the equivalent deposit amount in {{ acc.type }} to the above bitcoin wallet address. After payment upload the payment proof below.
+                                </div>
+                              {% endif %}
+ {% endfor %}
+                                <hr>
+
+                                <div class="alert alert-success">
+                                    Contact management at <span class="font-bold">careline@yeretrade.com</span> for other payment methods.
+                                </div>
+
+                            <hr class="bg-warning">
+
+
+                                        <h4 class="">
+                                           Upload payment proof after payment
+                                        </h4>
+
+
+
+
+                                        <form action="comfirm-payment"  id="my-dropzone" class="dropzone dropzoned" >
+                                               {% csrf_token %}
+                                            <div class="fallback ">
+                                                <input name="file" type="file" multiple/>
+                                            </div>
+                                        </form>
+
+
+
+
+                                            {% for pay in verifyPay %}
+                                                {% if forloop.last %}
+                                                 <img src="{{ pay.upload_proof.url }}">
+                                                {% endif %}
+                                            {% endfor %}
+
+
+
+
+
+
+
+              </div>
+
+                                                   </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+              </div>
+            </div>
+
+            
+
+
+
+
+
+
+{% endblock %}
+   {% block extra_script %}
+
+       <script>
+       document.getElementById("copyButton").addEventListener("click", function() {
+    copyToClipboard(document.getElementById("copyTarget"));
+});
+
+function copyToClipboard(elem) {
+	  // create hidden text element, if it doesn't already exist
+    var targetId = "_hiddenCopyText_";
+    var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+    var origSelectionStart, origSelectionEnd;
+    if (isInput) {
+        // can just use the original source element for the selection and copy
+        target = elem;
+        origSelectionStart = elem.selectionStart;
+        origSelectionEnd = elem.selectionEnd;
+    } else {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+            var target = document.createElement("textarea");
+            target.style.position = "absolute";
+            target.style.left = "-9999px";
+            target.style.top = "0";
+            target.id = targetId;
+            document.body.appendChild(target);
+        }
+        target.textContent = elem.textContent;
+    }
+    // select the content
+    var currentFocus = document.activeElement;
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+
+    // copy the selection
+    var succeed;
+    try {
+    	  succeed = document.execCommand("copy");
+    } catch(e) {
+        succeed = false;
+    }
+    // restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+    }
+
+    if (isInput) {
+        // restore prior selection
+        elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+    } else {
+        // clear temporary content
+        target.textContent = "";
+    }
+    return succeed;
+}
+
+
+
+</script>
+   {% endblock %}
+

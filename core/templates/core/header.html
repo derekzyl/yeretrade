@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div id="deposit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="create" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Make New Deposit</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <form  class="" method ="POST" accept-charset="utf-8" action="">
+                <div class="modal-body">
+{% csrf_token %}
+
+                        <div class="form-group col-md-12">
+
+                            {{ form.as_p }}
+                        </div>
+
+                        <div class="form-group col-md-12">
+
+
+{#                            <select class="form-control form-control-line" name="mode" required="">#}
+{##}
+{#                                <option value="bitcoin">Bitcoin</option>#}
+{#                                <option value="litecoin">Litecoin</option>#}
+{#                                <option value="ethereum">Ethereum</option>#}
+{#                                <option value="bank">Bank Transfer</option>#}
+{##}
+{#                            </select>#}
+
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit"  action="submit" value="submit" class="btn btn-dark btn-rounded waves-effect">PROCEED</button>
+                </div>
+                </form>
+
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'core/base.html' %}
+   {% block title %}
+   New Investment
+   {% endblock %}
+
+
+{% block content %}
+{% include 'core/modalForm.html' %}
+
+<div class="wrapper" style="height: auto; min-height: 100%;">
+
+
+    <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="min-height: 526px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+         New Investment        </h1>
+          
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">New Investment</li>
+        </ol>
+    </section>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="_container-fluid">
+
+
+                <h2 class="page-header text-center text-dark no-border">Start Your New Investment Today<br> Choose any of our below plans to start with.</h2>
+        <h5 class="subtitle text-center text-warning">Get 25% profit daily returns on your investment</h5>
+
+        <!-- Row -->
+        <div class="row">
+
+{% for plan in plans %}
+
+      <div class="col-lg-4">
+                <div class="box">
+                  <div class="box-body text-center">
+                    <h5 class="text-uppercase text-muted">{{ plan.plan_name }}</h5>
+                    <br>
+                    <h3 class="price">
+                      <sup></sup>{{ plan.plan_daily_percentage }}%
+                      <span> returns daily</span>
+                      <span>for {{ plan.days_duration }} days</span>
+                    </h3>
+
+                    <hr>
+                    <p><span class="text-bold">Minimum Deposit: {{ plan.minimum_deposit }} USD</span></p>
+                    <p><span class="text-bold">Miximum Deposit: {{ plan.maximum_deposit }} </span></p>
+                      <p><span class="text-success text-bold">Expected Returns: ${{ plan.get_expected_minimum }} USD - ${{ plan.get_expected_maximum }} USD</span></p>
+
+                    <br><br>
+                    <a class="btn btn-bold btn-block btn-dark" href="{{ plan.get_absolute_url }}">Select plan</a>
+                  </div>
+                </div>
+              </div>
+
+
+            {% endfor %}
+
+
+
+
+            
+
+            </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+            
+            
+
+>
+</div>
+<!-- ./wrapper -->
+
+
+
+
+
+{% endblock %}

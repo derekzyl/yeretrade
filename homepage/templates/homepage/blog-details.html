@@ -1,0 +1,176 @@
+{% extends "homepage/base.html"%}
+{% block title %}
+extra-blog
+{% endblock %}
+{% block crumbs %}
+extra-blog
+{% endblock %}
+{% block content %}
+    <!-- blog-details-section start -->
+    <section class="pt-150 pb-150">
+      <div class="container">
+        <div class="row">
+
+                     <div class="col-lg-8">
+            <div class="blog-details-wrapper">
+              <div class="blog-details__thumb">
+                <img src="{{ blog.image.url }}" alt="hello"/>
+                <div class="post__date">
+                  <span class="date">{{ blog.date|date:"d" }} </span>
+                  <span class="month">{{ blog.date|date:'b' }}</span>
+                </div>
+              </div><!-- blog-details__thumb end -->
+              <div class="blog-details__content">
+                <h4 class="blog-details__title">{{ blog.title }}</h4>
+                <p> {{ blog.content }} </p>
+                  </div><!-- blog-details__content end -->
+              <div class="blog-details__footer">
+                <h4 class="caption">Share Tish Post</h4>
+                <ul class="social__links">
+                  <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="#0"><i class="fab fa-pinterest-p"></i></a></li>
+                  <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div><!-- blog-details__footer end -->
+            </div><!-- blog-details-wrapper end -->
+            <div class="comments-area">
+              <h3 class="title">2 comments</h3>
+              <ul class="comments-list">
+                <li class="single-comment">
+                  <div class="single-comment__thumb">
+                    <img src="../../static/homepage/assets/images/testimonial/1.jpg" alt="image">
+                  </div>
+                  <div class="single-comment__content">
+                    <h6 class="name">Monica Wagase</h6>
+                    <span class="date">1 Hour ago</span>
+                    <a href="#0" class="reply-btn"><i class="fa fa-share"></i></a>
+                      <p></p>
+                  </div>
+                </li><!-- single-review end -->
+                <li class="single-comment">
+                  <div class="single-comment__thumb">
+                    <img src="../../static/homepage/assets/images/testimonial/2.jpg" alt="image">
+                  </div>
+                  <div class="single-comment__content">
+                    <h6 class="name">David James</h6>
+                    <span class="date">1 day ago</span>
+                    <a href="#0" class="reply-btn"><i class="fa fa-share"></i></a>
+                      <p></p>
+                  </div>
+                </li><!-- single-review end -->
+              </ul>
+            </div><!-- comments-area end -->
+            <div class="comment-form-area">
+              <h3 class="title">Live a Comment</h3>
+              <form class="comment-form">
+                <div class="row">
+                  <div class="col-lg-6 form-group">
+                    <input type="text" name="comment-name" id="comment-name" placeholder="Your Name" class="form-control">
+                  </div>
+                  <div class="col-lg-6 form-group">
+                    <input type="email" name="comment-email" id="comment-email" placeholder="Email Address" class="form-control">
+                  </div>
+                  <div class="col-lg-12 form-group">
+                    <input type="url" name="comment-url" id="comment-url" placeholder="Web Site" class="form-control">
+                  </div>
+                  <div class="col-lg-12 form-group">
+                    <textarea name="comment-message" id="comment-message" placeholder="Write Comment" class="form-control"></textarea>
+                  </div>
+                  <div class="col-lg-12">
+                    <button type="submit" class="cmn-btn">Post Comment</button>
+                  </div>
+                </div>
+              </form>
+            </div><!-- comment-form-area end -->
+          </div>
+
+
+
+
+          <div class="col-lg-4 pl-lg-5">
+            <div class="sidebar">
+              <div class="widget">
+                <form class="search-from">
+                  <div class="custom-input-field">
+                    <input type="text" name="ship-search_keyword" id="ship-search_keyword" placeholder="Keywords" class="form-control">
+                    <i class="fa fa-search"></i>
+                  </div>
+                </form>
+              </div><!-- widget end -->
+              <div class="widget">
+                <h3 class="widget-title">Categories</h3>
+                <ul class="category-list">
+                  <li><a href="#0">SEO Expert</a></li>
+                  <li><a href="#0">Digital Market</a></li>
+                  <li><a href="#0">Marketing Expert</a></li>
+                  <li><a href="#0">HTML Template</a></li>
+                  <li><a href="#0">WordPress Theme</a></li>
+                </ul>
+              </div><!-- widget end-->
+
+              <div class="widget">
+                <h3 class="widget-title">Archive</h3>
+                <ul class="category-list">
+                  <li><a href="#0">SEO Expert</a></li>
+                  <li><a href="#0">Digital Market</a></li>
+                  <li><a href="#0">Marketing Expert</a></li>
+                  <li><a href="#0">HTML Template</a></li>
+                  <li><a href="#0">WordPress Theme</a></li>
+                </ul>
+              </div><!-- widget end-->
+
+              <div class="widget">
+                <h3 class="widget-title">Popular blog post</h3>
+                <ul class="small-post-list">
+                  <li class="small-post-single">
+                    <div class="thumb"><img src="../../static/homepage/assets/images/blog/1.jpg" alt="image"></div>
+                    <div class="content">
+                      <h6 class="post-title"><a href="blog-details.html"> Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio</a></h6>
+                      <a href="#0" class="date">December 15, 2019</a>
+                    </div>
+                  </li><!-- small-post-single end -->
+                  <li class="small-post-single">
+                    <div class="thumb"><img src="../../static/homepage/assets/images/blog/2.jpg" alt="image"></div>
+                    <div class="content">
+                      <h6 class="post-title"><a href="blog-details.html">Erat dui consectetuer portt malesua sed commodo consectetuer.</a></h6>
+                      <a href="#0" class="date">December 15, 2019</a>
+                    </div>
+                  </li><!-- small-post-single end -->
+                  <li class="small-post-single">
+                    <div class="thumb"><img src="../../static/homepage/assets/images/blog/3.jpg" alt="image"></div>
+                    <div class="content">
+                      <h6 class="post-title"><a href="blog-details.html">Olementum nunc eget magco modo consectetuer diam orci </a></h6>
+                      <a href="#0" class="date">December 15, 2019</a>
+                    </div>
+                  </li><!-- small-post-single end -->
+                  <li class="small-post-single">
+                    <div class="thumb"><img src="../../static/homepage/assets/images/blog/1.jpg" alt="image"></div>
+                    <div class="content">
+                      <h6 class="post-title"><a href="blog-details.html">Venenatis elementum vel tristique eu nunc  ultrices elementum</a></h6>
+                      <a href="#0" class="date">December 15, 2019</a>
+                    </div>
+                  </li><!-- small-post-single end -->
+                </ul>
+              </div><!-- widget end -->
+              <div class="widget">
+                <h3 class="widget-title">tags</h3>
+                <d class="tag-list">
+                  <a href="#0">SEO</a>
+                  <a href="#0">Marketing</a>
+                  <a href="#0">Digital</a>
+                  <a href="#0">HTML</a>
+                  <a href="#0">WordPress</a>
+                  <a href="#0">Theme</a>
+                  <a href="#0">Plugin</a>
+                </d>
+              </div><!-- widget end -->
+            </div><!-- sidebar end -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- blog-details-section end -->
+
+
+{% endblock %}
