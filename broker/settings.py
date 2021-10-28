@@ -25,7 +25,7 @@ SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY', '6wx0ha(v0bk@h4n_t%y1kgs3vfbtk2d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # DEBUG=False
-ALLOWED_HOSTS = ['stockbro.pythonanywhere.com','localhost', 'www.coinminfx.com']
+ALLOWED_HOSTS = ['stockbro.pythonanywhere.com','localhost', 'www.yeretrade.com']
 
 
 # Application definition
