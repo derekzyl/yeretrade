@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-6wx0ha(v0bk@h4n_t%y1kgs3vfbtk2dawve_(wtsq*lzj16qn9'
 SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY', '6wx0ha(v0bk@h4n_t%y1kgs3vfbtk2dawve_(wtsq*lzj16qn9' )
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG=False
-ALLOWED_HOSTS = ['stockbro.pythonanywhere.com','localhost', 'www.yeretrade.com']
+# DEBUG = True
+DEBUG=False
+ALLOWED_HOSTS = ['yeretrade.pythonanywhere.com','localhost', 'www.yeretrade.com']
 
 
 # Application definition
