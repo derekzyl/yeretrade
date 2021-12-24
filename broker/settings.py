@@ -19,9 +19,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-6wx0ha(v0bk@h4n_t%y1kgs3vfbtk2dawve_(wtsq*lzj16qn9'
-SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY', '6wx0ha(v0bk@h4n_t%y1kgs3vfbtk2dawve_(wtsq*lzj16qn9' )
+
+SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY', '' )
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG=False
@@ -195,10 +194,10 @@ SESSION_COOKIE_SECURE =True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.privateemail.com'
-EMAIL_HOST_USER = 'careline@coinminfx.com'
-EMAIL_HOST_PASSWORD = 'kingKONG..'
-SERVER_EMAIL = 'careline@coinminfx.com'
-DEFAULT_FROM_EMAIL = 'careline@coinminfx.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+SERVER_EMAIL = ''
+DEFAULT_FROM_EMAIL = ''
 
 
 EMAIL_PORT = 587
